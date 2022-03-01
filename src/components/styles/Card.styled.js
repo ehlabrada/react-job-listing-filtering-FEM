@@ -17,6 +17,7 @@ export const StyledCard = styled.li`
 
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -131,6 +132,8 @@ export const CardAbilities = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  flex-wrap: wrap;
 
   span {
     background-color: ${({ theme }) =>

@@ -1,5 +1,6 @@
 import React from "react";
 import CardList from "./CardList";
+import Filter from "./Filter";
 import { StyledContent } from "./styles/Content.styled";
 
 const Content = ({
@@ -11,9 +12,10 @@ const Content = ({
   filteredJobs,
   setFilteredJobs,
   removeFilter,
+  clearFilters,
 }) => {
   return (
-    <StyledContent>
+    <StyledContent filters={filters.length}>
       <CardList
         jobs={jobs}
         // loading={loading}

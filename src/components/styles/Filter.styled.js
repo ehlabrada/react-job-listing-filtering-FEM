@@ -2,21 +2,23 @@ import styled from "styled-components";
 
 export const StyledFilter = styled.div`
   padding: 20px 40px;
-  width: 100%;
+  width: 80%;
   height: 70px;
   border-radius: 10px;
   background-color: white;
 
-  margin-bottom: 20px;
+  margin-top: -35px;
+
+  z-index: 999;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    /* flex-wrap: wrap; */
     height: auto;
     margin-bottom: 40px;
+    width: 90%;
   }
 `;
 
