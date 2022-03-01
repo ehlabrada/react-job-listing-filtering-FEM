@@ -12,10 +12,15 @@ const Main = ({
   clearFilters,
   filteredJobs,
   setFilteredJobs,
+  removeFilter,
 }) => {
   return (
     <StyledMain>
-      <Header filters={filters} clearFilters={clearFilters} />
+      <Header
+        filters={filters}
+        removeFilter={removeFilter}
+        clearFilters={clearFilters}
+      />
       {/* <Filter /> */}
       <Content
         jobs={jobs}

@@ -10,6 +10,7 @@ const Content = ({
   handleAddFilters,
   filteredJobs,
   setFilteredJobs,
+  removeFilter,
 }) => {
   return (
     <StyledContent>

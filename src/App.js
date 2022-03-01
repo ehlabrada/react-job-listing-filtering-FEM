@@ -10,7 +10,7 @@ import GlobalStyle from "./components/styles/theme/globalStyle";
 import Theme from "./components/styles/theme/Theme";
 
 // Data
-import data from "./data.json";
+import data from "./data";
 
 const App = () => {
   const [jobs, setJobs] = useState(data);
@@ -32,6 +32,13 @@ const App = () => {
     }
   };
 
+  const removeFilter = (filtro) => {
+    console.log("FILTRO AT APP", filtro);
+    setFilters((prevFilters) =>
+      prevFilters.filter((filter) => filter !== filtro)
+    );
+  };
+
   // Remove all filters
   const clearFilters = () => {
     setFilters([]);
@@ -49,6 +56,7 @@ const App = () => {
           clearFilters={clearFilters}
           // Filtered Jobs
           filteredJobs={filteredJobs}
+          removeFilter={removeFilter}
           setFilteredJobs={setFilteredJobs}
         />
       </ThemeProvider>

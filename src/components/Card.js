@@ -4,6 +4,9 @@ import {
   CardDescription,
   CardDescriptionAndImg,
   CardImg,
+  CardImgMobile,
+  LineDivider,
+  NewAndFeatured,
   OtherDetails,
   PositionTitle,
   StyledCard,
@@ -12,12 +15,17 @@ import {
 const Card = (props) => {
   if (props.filters.every((filter) => props.tags.includes(filter))) {
     return (
-      <StyledCard>
+      <StyledCard featured={props.featured}>
         <CardDescriptionAndImg>
           <CardImg src={props.logo} alt="logo-img" />
+          <CardImgMobile src={props.logo} alt="logo-img" />
           <CardDescription>
             <BusinessInfo>
               <p>{props.company}</p>
+              {props.new && (
+                <NewAndFeatured nuevo={props.new}>New</NewAndFeatured>
+              )}
+              {props.featured && <NewAndFeatured>Featured</NewAndFeatured>}
             </BusinessInfo>
             <PositionTitle>{props.position}</PositionTitle>
             <OtherDetails>
@@ -27,6 +35,7 @@ const Card = (props) => {
             </OtherDetails>
           </CardDescription>
         </CardDescriptionAndImg>
+        <LineDivider />
         <CardAbilities>
           <span onClick={() => props.handleAddFilters(props.role)}>
             {props.role}

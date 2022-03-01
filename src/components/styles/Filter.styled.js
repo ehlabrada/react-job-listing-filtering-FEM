@@ -9,25 +9,73 @@ export const StyledFilter = styled.div`
 
   margin-bottom: 20px;
 
-  /* position: absolute;
-  bottom: -35%;
-  right: 20px;
-  left: 20px; */
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    /* flex-wrap: wrap; */
+    height: auto;
+    margin-bottom: 40px;
+  }
 `;
 
 export const Filters = styled.div`
-  span {
+  /* span {
     background-color: ${({ theme }) =>
-      theme.colors.lightGrayishCyanFilterTablets};
+    theme.colors.lightGrayishCyanFilterTablets};
     color: ${({ theme }) => theme.colors.desaturatedDarkCyan};
     padding: 7px;
     margin-right: 15px;
     border-radius: 5px;
     cursor: pointer;
+    position: relative; */
+
+  /* } */
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* height: auto; */
+    gap: 5px;
+  }
+`;
+
+export const SingleFilter = styled.button`
+  background-color: ${({ theme }) =>
+    theme.colors.lightGrayishCyanFilterTablets};
+  color: ${({ theme }) => theme.colors.desaturatedDarkCyan};
+  padding: 7px;
+  margin-right: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 40px;
+  outline: none;
+  border: none;
+
+  span {
+    margin-left: 7px;
+    background-color: red;
+    height: 100%;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: ${({ theme }) => theme.colors.desaturatedDarkCyan};
+    border-radius: 0 5px 5px 0;
+
+    img {
+      vertical-align: middle;
+      position: absolute;
+      top: 30%;
+      right: 25%;
+
+      @media screen and (max-width: 768px) {
+        top: 25%;
+      }
+    }
   }
 `;
 

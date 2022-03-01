@@ -17,5 +17,11 @@ export const StyledHeader = styled.header`
 
   @media screen and (max-width: 768px) {
     background-image: url(${bgImgMobile});
+    padding: 30px 30px;
+    height: auto;
+
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
   }
 `;
